@@ -1,11 +1,24 @@
-function cargar_elemento() {
-    var container = document.getElementById('container')
-    var opcion = document.getElementById('opcion')
-    h1.appendChild(opcion)
-    container.appendChild(h1)
-}
+// Obtener elementos del DOM
+const fileInput = document.getElementById('file-input');
+const loadBtn = document.getElementById('load-btn');
+const deleteBtn = document.getElementById('delete-btn');
+const imagePreview = document.getElementById('image-preview');
 
-function eliminar_elemento() {
-    var container = document.getElementById('container')
-    container.removeChild( container.lastElementChild )
-}
+// Habilitar o deshabilitar botón de eliminación según si hay una imagen cargada
+fileInput.addEventListener('change', function() {
+  if (fileInput.files && fileInput.files[0]) {
+    const reader = new FileReader();
+    reader.onload = function(e) {
+      imagePreview.src = e.target.result;
+      deleteBtn.disabled = false;
+    };
+    reader.readAsDataURL(fileInput.files[0]);
+  }
+});
+
+// Eliminar la imagen cargada y deshabilitar el botón de eliminación
+deleteBtn.addEventListener('click', function() {
+  imagePreview.src = '#';
+  fileInput.value = '';
+  deleteBtn.disabled = true;
+});
