@@ -1,23 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Cargar y Eliminar Imágenes</title>
-  <link rel="stylesheet" type="text/css" href="styles.css">
+    <title>JavaScript DOM - Funciones</title>
+    <link rel="stylesheet" type="text/css" href="estilos.css">
+    <script type="text/javascript" src="script.js"></script>
 </head>
-<body>
-  <div class="container">
-    <div class="box">
-      <h3>Cargar Imagen</h3>
-      <input type="file" id="file-input">
-      <button id="load-btn">Cargar</button>
+<body > 
+    <img class="opcion" id="opcion2" src="Pingu.png" height="295" width="295">
+   <button class= "boton1" onclick="seleccionar_opcion(1)">Eliminar</button>
+   <button class= "boton2" onclick="seleccionar_opcion(2)">Cargar Imagen</button>
+   <div id="container">
+    <div class="opcion" id="opcion1"></div>
     </div>
-    <div class="box">
-      <h3>Eliminar Imagen</h3>
-      <img id="image-preview" src="#" alt="Imagen">
-      <button id="delete-btn" disabled>Eliminar</button>
-    </div>
-  </div>
-
-  <script src="script.js"></script>
 </body>
 </html>
