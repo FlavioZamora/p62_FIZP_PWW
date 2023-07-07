@@ -1,0 +1,46 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {    
+    text-decoration: none;
+}
+
+header {
+    margin: 5px;
+    border: 1px solid black;
+    padding: 5px;
+   
+   height: 200px;  
+   background-color: rgb(226, 181, 32);
+   grid-gap: 5px;
+}
+
+.main {
+    margin: 5px;
+    border: 1px solid black;
+    padding: 5px;
+   height: 50px;
+  color: white;
+   background-color: rgb(206, 164, 25);
+}
+
+.sidebar {
+    margin: 5px;
+    border: 1px solid black;
+    padding: 5px;
+   height: 500px;
+  color: white;
+    background-color: #e4dfb5;
+}
+
+footer {
+    margin: 5px;
+    border: 1px solid black;
+    padding: 5px;
+   height: 50px;
+   color: white;
+   background-color: rgb(226, 181, 32);
+}
