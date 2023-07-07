@@ -14,24 +14,24 @@
 
 .header {
     grid-area: header;
-    background-color: rgb(228, 166, 10);
+    background-color: goldenrod;
     border: 1px solid black;
 }
 
 .left {
     grid-area: left;
-    background-color: rgb(201, 150, 22);
+    background-color: gold;
     border: 1px solid black;
 }
 
 .content {
     grid-area: content;
-    background-color: rgba(240, 225, 162, 0.907);
+    background-color: rgba(239, 214, 102, 0.907);
     border: 1px solid black;
 }
 .footer {
     grid-area: footer;
-    background-color: rgb(228, 166, 10);
+    background-color: goldenrod;
     border: 1px solid black;
 }
 
