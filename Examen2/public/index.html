@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Lista de Docentes</title>
+</head>
+<body>
+  <h1>Lista de Docentes</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Cédula</th>
+        <th>Nombre</th>
+        <th>Apellido</th>
+        <th>Teléfono</th>
+        <th>Correo Electrónico</th>
+        <th>Fecha de Registro</th>
+      </tr>
+    </thead>
+    <tbody id="docentes-list">
+    </tbody>
+  </table>
+
+  <script>
+    fetch('/api/docentes')
+      .then(response => response.json())
+      .then(data => {
+        const docentesList = document.getElementById('docentes-list');
+        data.forEach(docente => {
+          const row = document.createElement('tr');
+          row.innerHTML = `
+            <td>${docente.cedula}</td>
+            <td>${docente.nombre}</td>
+            <td>${docente.apellido}</td>
+            <td>${docente.telefono}</td>
+            <td>${docente.correo_electronico}</td>
+            <td>${new Date(docente.fecha_registro).toLocaleDateString()}</td>
+          `;
+          docentesList.appendChild(row);
+        });
+      })
+      .catch(error => console.error(error));
+  </script>
+</body>
+</html>
